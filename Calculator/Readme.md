@@ -55,7 +55,7 @@ Implementing arithmetic operations
 
 Practicing input handling and conditional statements
 
-👩‍💻 Author
+👩‍💻 Author sujal suthar
 
-Kritika Agarwal
+
 
