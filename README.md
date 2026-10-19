@@ -1,4 +1,4 @@
-# ☕ Advanced Java Experiments
+# ☕ Advanced Java Experiments and 🎬 CineBook – Movie Ticket Booking System project
 
 A collection of **Advanced Java** practical experiments covering core concepts like MVC Architecture, Socket Programming, JDBC, RMI, and Swing GUI — implemented as part of academic coursework.
 
@@ -180,5 +180,148 @@ java RMI.client    # Run client
 ---
 
 ## 📄 License
+
+# 🎬 CineBook – Movie Ticket Booking System
+
+CineBook is an **Advanced Java movie ticket booking web application** built using **MVC Architecture** with JSP, Servlets, JDBC and MySQL. It runs on **Apache Tomcat 11** and Jakarta EE 10.
+
+## ✨ Features
+
+- 👤 User Registration & Login
+- 🎬 Movie Browsing & Search
+- 🎭 Theatre & Showtime Selection
+- 💺 Interactive Seat Booking
+- 💳 Payment Simulation
+- 🎟️ Digital Ticket & Booking History
+- 🛠️ Admin Dashboard
+- 🔒 Secure Seat Concurrency Validation
+
+## 🛠️ Technologies
+
+**Java 17 • Jakarta EE 10 • Tomcat 11 • MySQL 8 • Maven • JDBC • JSP • Bootstrap 5**
+
+## 🔄 Application Workflow
+
+```text
+User
+ ↓
+JSP / Web Page
+ ↓
+Servlet (Controller)
+ ↓
+Service Layer
+ ↓
+DAO Layer
+ ↓
+JDBC
+ ↓
+MySQL Database
+ ↓
+DAO → Service → Servlet
+ ↓
+JSP Response
+ ↓
+User
+```
+
+### 🎟️ Booking Flow
+
+```text
+Login
+  ↓
+Browse Movies
+  ↓
+Select Theatre & Showtime
+  ↓
+Select Seats
+  ↓
+Checkout & Payment
+  ↓
+Booking Saved in MySQL
+  ↓
+Generate Digital Ticket
+  ↓
+Booking History
+```
+
+The application follows a multi-tier MVC structure: **JSP → Servlet → Service → DAO → JDBC → MySQL**.
+
+## 📂 File Structure
+
+```text
+cinebook/
+├── pom.xml
+├── README.md
+├── sql/
+│   └── schema.sql
+│
+├── src/main/java/com/cinebook/
+│   ├── model/
+│   │   ├── User.java
+│   │   ├── Movie.java
+│   │   ├── Theatre.java
+│   │   ├── Showtime.java
+│   │   └── Booking.java
+│   │
+│   ├── util/
+│   │   └── DBUtil.java
+│   │
+│   ├── dao/
+│   │   ├── UserDAO.java
+│   │   ├── MovieDAO.java
+│   │   ├── TheatreDAO.java
+│   │   ├── ShowtimeDAO.java
+│   │   └── BookingDAO.java
+│   │
+│   ├── service/
+│   │   ├── UserService.java
+│   │   ├── MovieService.java
+│   │   ├── ShowtimeService.java
+│   │   └── BookingService.java
+│   │
+│   ├── controller/
+│   │   ├── HomeServlet.java
+│   │   ├── AuthServlet.java
+│   │   ├── MovieServlet.java
+│   │   ├── BookingServlet.java
+│   │   └── AdminServlet.java
+│   │
+│   ├── filter/
+│   ├── listener/
+│   └── demo/
+│
+├── src/main/resources/
+│   ├── db.properties
+│   └── messages.properties
+│
+└── src/main/webapp/
+    ├── index.jsp
+    ├── WEB-INF/
+    │   ├── web.xml
+    │   └── views/
+    │       ├── auth/
+    │       ├── movie/
+    │       ├── booking/
+    │       └── admin/
+    └── assets/
+        ├── css/
+        └── js/
+```
+
+The project separates **Models, DAO, Services, Controllers, Filters, Listeners, JSP Views, resources and database scripts** for clean maintainability.
+
+## 🚀 Run
+
+```bash
+mvn clean package
+```
+
+Deploy `target/cinebook.war` to **Tomcat 11** and open:
+
+```text
+http://localhost:8080/cinebook/
+```
+
+
 
 This project is for **educational purposes** only.
