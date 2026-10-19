@@ -64,5 +64,5 @@ Replace the filenames and class names with those used in your project.
 
 ## 👩‍💻 Author
 
-**Kritika Agarwal**
+**sujal suthar**
 
