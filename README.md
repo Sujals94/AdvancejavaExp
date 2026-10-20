@@ -1,6 +1,6 @@
 # ☕ Advanced Java Experiments
 
-A collection of **Advanced Java** practical experiments covering core concepts like MVC Architecture, Socket Programming, JDBC, RMI, and Swing GUI — implemented as part of academic coursework.
+A collection of **Advanced Java** practical experiments covering core concepts like MVC Architecture, Socket Programming, JDBC, RMI, Swing GUI, and Servlet Programming — implemented as part of academic coursework.
 
 ---
 
@@ -12,7 +12,8 @@ advanceJava-main/
 ├── clientServer/             → Socket Programming (Client-Server)
 ├── JDBC/                     → Java Database Connectivity (MySQL)
 ├── RMI/                      → Remote Method Invocation
-└── StudentRegistrationForm/  → Swing GUI Registration Form
+├── StudentRegistrationForm/  → Swing GUI Registration Form
+└── servlet/                  → Servlet, Filter & Listener (Maven Web App)
 ```
 
 ---
@@ -122,6 +123,32 @@ A **form-based Swing application** for student registration with full validation
 
 ---
 
+### 6. 🌍 Servlet — Servlet, Filter & Listener
+**Folder:** `servlet/`
+
+A **Maven-based Java Web Application** demonstrating core Java EE Servlet concepts including request handling, session management, authentication filtering, and lifecycle listening.
+
+| File | Role |
+|------|------|
+| `HelloServlet.java` | Handles `GET` (prints welcome message) and `POST` (greets user by name) at `/hello` |
+| `LoginServlet.java` | Handles `POST` login at `/login` — validates credentials (`admin`/`1234`), creates `HttpSession` on success |
+| `HomeServlet.java` | Handles `GET` at `/home` — reads username from session and displays personalized welcome page |
+| `AuthFilter.java` | `@WebFilter("/home")` — checks if user is logged in (session exists); redirects to `index.html` if not |
+| `AppListener.java` | `@WebListener` — `ServletContextListener` that prints `"Application Started"` / `"Application Stopped"` on deploy/undeploy |
+| `index.html` | Login form UI — submits credentials to `/login` |
+| `pom.xml` | Maven config — manages Jakarta Servlet dependencies |
+
+**Request Flow:**
+```
+index.html → POST /login → LoginServlet → (session created) → GET /home
+                                                              ↑
+                                                         AuthFilter checks session
+```
+
+**Key Concepts:** `HttpServlet`, `HttpSession`, `Filter`, `FilterChain`, `ServletContextListener`, `@WebServlet`, `@WebFilter`, `@WebListener`, Jakarta EE, Maven
+
+---
+
 ## 🛠️ Prerequisites
 
 | Tool | Version |
@@ -129,6 +156,8 @@ A **form-based Swing application** for student registration with full validation
 | Java JDK | 8 or above |
 | MySQL Server | 5.7 or above (for JDBC experiment) |
 | MySQL JDBC Driver | `mysql-connector-java.jar` |
+| Apache Tomcat | 10+ (for Servlet experiment) |
+| Maven | 3.6+ (for Servlet experiment) |
 | IDE | IntelliJ IDEA / Eclipse / VS Code |
 
 ---
@@ -169,6 +198,14 @@ javac *.java
 rmiregistry &      # Start RMI registry
 java RMI.server    # Start server
 java RMI.client    # Run client
+```
+
+### Servlet (Maven Web App)
+```bash
+cd servlet/servlet
+mvn clean package
+# Deploy generated .war file from target/ to Apache Tomcat webapps/
+# Then open: http://localhost:8080/servlet/
 ```
 
 ---
