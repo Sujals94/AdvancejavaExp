@@ -1,8 +1,7 @@
 # ☕ Advanced Java Experiments and 🎬 CineBook – Movie Ticket Booking System project
 
-A collection of **Advanced Java** practical experiments covering core concepts like MVC Architecture, Socket Programming, JDBC, RMI, Swing GUI, and Servlet Programming — implemented as part of academic coursework.
-
----
+🖥️ Java Swing • 🗄️ JDBC • 🌐 Sockets • 🔗 RMI • 🌍 Jakarta Servlet • 📄 JSP • 🐬 MySQL
+A structured Advanced Java laboratory repository containing practical experiments covering MVC Architecture, Socket Programming, JDBC, RMI, Swing GUI, and Jakarta Servlet programming, together with CineBook, an Advanced Java movie ticket booking application.
 
 ## 📁 Project Structure
 
